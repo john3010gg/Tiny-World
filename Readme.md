@@ -1,29 +1,30 @@
 Universidad Simón Bolívar
 CI-2693 – Laboratorio de Algoritmos y Estructuras III
 Enero-Marzo 2026
-
 Integrantes:
-Nazareth Colmenares - 20-10017
-John Garrido - 20-10293
+
+    Nazareth Colmenares - 20-10017
+
+    John Garrido - 20-10293
 
 Este proyecto implementa un algoritmo en Kotlin que ayuda a los jugadores del JCC (Juego de Cartas Coleccionables) 
 "Duelo de cartas de mostro" a encontrar todas las posibles combinaciones de cartas mostro (ternas) que satisfacen las 
 condiciones de la carta conjuro Mundo Chiquito.
 
-La estructura principal utiliza un grafo no dirigido implementado con MutableMap<CartaMostro, MutableList<CartaMostro>> donde 
+La estructura principal utiliza un grafo no dirigido implementado con MutableMap(Carta Mostro) donde 
 cada vértice (carta) se asocia a una lista de sus vecinos (cartas con las que comparte exactamente una característica).
 
 Complejidad Total del Algoritmo:
 
-    Tiempo: O(V³) en el peor caso, donde V = número de cartas
+    Tiempo: O(V^3) en el peor caso, donde V = número de cartas
 
-    Espacio: O(V²) para almacenar el grafo (cuando todas las cartas están conectadas)
+    Espacio: O(V^2) para almacenar el grafo (cuando todas las cartas están conectadas)
 
 Decisiones de Implementación:
 
-    Estructura de Datos Principal:
+Estructura de Datos Principal:
 
-        Se eligió un MutableMap<CartaMostro, MutableList<CartaMostro>> para representar el grafo no dirigido porque permite acceso O(1) a la lista 
+Se eligió un MutableMap(CartaMostro, MutableList(CartaMostro)) para representar el grafo no dirigido porque permite acceso O(1) a la lista 
 de vecinos de cada carta, facilita la verificación de existencia de vértices y se integra naturalmente con las características de 
 nulabilidad de Kotlin. Al ser un grafo no dirigido, al agregar una arista entre dos cartas, se añade cada carta a la lista de vecinos de la otra, manteniendo la simetría de las conexiones.
 
